@@ -27,6 +27,8 @@ This in turn will set up all personal IAM users in herodot-org-iam, which are th
 
 Once bootstrapping is done, make sure to remove all Access Key ID / Secret Access Key pairs for all Root Users of all AWS accounts!
 
+For every IAM user newly created in account herodot-org-iam, you need to manually enable and set a AWS Console Access password and provide this to the user.
+
 
 ### What this project does
 
