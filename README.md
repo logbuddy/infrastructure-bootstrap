@@ -19,6 +19,14 @@ For each account's Root user, please enable MFA.
 
 Then, create API credentials for each AWS Account root user and put these into file `terraform/accounts/terraform.tfvars`, using `terraform/accounts/terraform.tfvars.dist` as a template.
 
+Next, switch to `terraform/accounts` and run `terraform init` and then `terraform apply` there.
+
+This creates IAM user "AccountManager" in account "herodot-org-iam" - use its API credentials to fully set up the herodot-org-iam account via `terraform/account-org-iam`.
+
+This in turn will set up all personal IAM users in herodot-org-iam, which are then able to assume the AccountManager role in all other accounts (use bin/assume-role.sh for this when working on the command line), and are therefore best suited for any further AWS work from then on.
+
+Once bootstrapping is done, make sure to remove all Access Key ID / Secret Access Key pairs for all Root Users of all AWS accounts!
+
 
 ### What this project does
 
@@ -38,11 +46,3 @@ For the root account herodot-root, this is straight-forward: simply get an Acces
 For the other accounts, like herodot-org-iam and herodot-infra-webapp-prod, you also need to retrieve an Access Key ID and its Secret Access Key of each Root User kiessling.manuel+aws-herodot-org-iam@gmail.com and kiessling.manuel+aws-herodot-infra-webapp-prod@gmail.com respectively, and put these into a file named terraform.tfvars - a file that intentionally is not part of git.
 
 Use file terraform.tfvars.dist as the template for the files' structure.
-
-As soon as bootstrapping is done, set an AWS Web Console password for IAM user "AccountManager" in account herodot-org-iam manually.
-
-Use this IAM user (and its API credentials) to fully set up the herodot-org-iam account via `terraform/org-iam`.
-
-This in turn will set up all personal IAM users in herodot-org-iam, which are then able to assume the AccountManager role in all other accounts (use bin/assume-role.sh for this), and therefore are sufficient for any further AWS work from then on.
-
-Once bootstrapping is done, make sure to remove all Access Key ID / Secret Access Key pairs for all Root Users of all AWS accounts!

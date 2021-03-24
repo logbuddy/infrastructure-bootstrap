@@ -72,7 +72,6 @@ EOT
 }
 
 
-# We do run servers in our infra accounts, but only in one region
 resource "aws_organizations_policy" "infra_ec2_region_limit" {
   provider = aws.root
 
@@ -86,14 +85,7 @@ resource "aws_organizations_policy" "infra_ec2_region_limit" {
       "Sid": "InfraEC2RegionLimit",
       "Effect": "Deny",
       "Action": "ec2:*",
-      "Resource": "*",
-      "Condition": {
-        "StringNotEquals": {
-            "aws:RequestedRegion": [
-                "eu-central-1"
-            ]
-        }
-      }
+      "Resource": "*"
     }
   ]
 }
