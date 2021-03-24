@@ -28,6 +28,18 @@ provider "aws" {
 }
 
 
+variable "account_credentials_infra_company_prod" {
+  type = object({ access_key_id = string, secret_access_key = string })
+}
+
+provider "aws" {
+  alias      = "infra_company_prod"
+  access_key = var.account_credentials_infra_company_prod.access_key_id
+  secret_key = var.account_credentials_infra_company_prod.secret_access_key
+  region     = local.default_region
+}
+
+
 locals {
   default_region = "us-west-1"
 
@@ -38,7 +50,12 @@ locals {
 
   account_info_infra_webapp_prod = {
     id    = "230024871185"
-    name  = "herodot-org-iam"
+    name  = "herodot-infra-webapp-prod"
+  }
+
+  account_info_infra_company_prod = {
+    id    = "230024871185"
+    name  = "herodot-infra-company-prod"
   }
 
   account_manager_user_name = "AccountManager"
