@@ -30,6 +30,14 @@ resource "aws_organizations_account" "org_iam" {
   parent_id = aws_organizations_organizational_unit.org.id
 }
 
+resource "aws_organizations_account" "infra_company_prod" {
+  provider = aws.root
+
+  name  = local.account_info_infra_company_prod.name
+  email = local.account_info_infra_company_prod.email
+  parent_id = aws_organizations_organizational_unit.infra.id
+}
+
 resource "aws_organizations_account" "infra_webapp_prod" {
   provider = aws.root
 
