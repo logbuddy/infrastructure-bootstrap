@@ -1,0 +1,11 @@
+# Provide actual AWS Access Key IDs and Secret Access Keys of the Account Root User of each AWS Account that needs to be managed, and store this file locally as `terraform.tfvars` (which is intentionally not checked into git).
+
+account_credentials_org_iam = {
+  access_key_id = "AKI..."
+  secret_access_key = "gb5..."
+}
+
+account_credentials_infra_webapp_prod = {
+  access_key_id = "AKI..."
+  secret_access_key = "O4M..."
+}
