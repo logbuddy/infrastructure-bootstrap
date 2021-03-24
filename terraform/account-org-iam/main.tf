@@ -38,8 +38,3 @@ data "aws_iam_policy" "read_only_access" {
   arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
   provider = aws.org_iam
 }
-
-data "aws_iam_policy" "athena_full_access" {
-  arn = "arn:aws:iam::aws:policy/AmazonAthenaFullAccess"
-  provider = aws.org_iam
-}
