@@ -2,6 +2,16 @@
 
 ## Infrastructure Bootstrap Project
 
+### AWS Accounts
+
+668123239304 - herodot-root - Root account, Org root
+507397081639 - herodot-org-iam - IAM account
+829748688443 - herodot-infra-company-prod
+230024871185 - herodot-infra-webapp-prod
+
+071157021432 - Personal main account of Manuel Kießling
+878092365830 - Proof-of-concept account, part of Org owned by 071157021432
+
 
 ### Getting started
 
