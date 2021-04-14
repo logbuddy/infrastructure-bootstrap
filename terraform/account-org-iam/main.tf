@@ -6,6 +6,11 @@ locals {
     name  = "herodot-org-iam"
   }
 
+  account_info_infra_webapp_preprod = {
+    id    = "619527075300"
+    name  = "herodot-infra-webapp-prod"
+  }
+
   account_info_infra_webapp_prod = {
     id    = "230024871185"
     name  = "herodot-infra-webapp-prod"
@@ -34,6 +39,14 @@ provider "aws" {
   alias = "infra_webapp_prod"
   assume_role {
     role_arn = "arn:aws:iam::${local.account_info_infra_webapp_prod.id}:role/${local.account_manager_role_name}"
+  }
+  region = local.default_region
+}
+
+provider "aws" {
+  alias = "infra_webapp_preprod"
+  assume_role {
+    role_arn = "arn:aws:iam::${local.account_info_infra_webapp_preprod.id}:role/${local.account_manager_role_name}"
   }
   region = local.default_region
 }
