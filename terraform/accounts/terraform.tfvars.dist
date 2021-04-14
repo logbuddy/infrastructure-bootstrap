@@ -2,10 +2,20 @@
 
 account_credentials_org_iam = {
   access_key_id = "AKI..."
-  secret_access_key = "gb5..."
+  secret_access_key = "0Io.."
+}
+
+account_credentials_infra_webapp_preprod = {
+  access_key_id = "AKI..."
+  secret_access_key = "rkz..."
 }
 
 account_credentials_infra_webapp_prod = {
+  access_key_id = "AKI.."
+  secret_access_key = "vTS..."
+}
+
+account_credentials_infra_company_prod = {
   access_key_id = "AKI..."
-  secret_access_key = "O4M..."
+  secret_access_key = "YVp..."
 }
