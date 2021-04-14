@@ -16,6 +16,18 @@ provider "aws" {
 }
 
 
+variable "account_credentials_infra_webapp_preprod" {
+  type = object({ access_key_id = string, secret_access_key = string })
+}
+
+provider "aws" {
+  alias      = "infra_webapp_preprod"
+  access_key = var.account_credentials_infra_webapp_preprod.access_key_id
+  secret_key = var.account_credentials_infra_webapp_preprod.secret_access_key
+  region     = local.default_region
+}
+
+
 variable "account_credentials_infra_webapp_prod" {
   type = object({ access_key_id = string, secret_access_key = string })
 }
@@ -48,13 +60,18 @@ locals {
     name  = "herodot-org-iam"
   }
 
+  account_info_infra_webapp_preprod = {
+    id    = "619527075300"
+    name  = "herodot-infra-webapp-preprod"
+  }
+
   account_info_infra_webapp_prod = {
     id    = "230024871185"
     name  = "herodot-infra-webapp-prod"
   }
 
   account_info_infra_company_prod = {
-    id    = "230024871185"
+    id    = "829748688443"
     name  = "herodot-infra-company-prod"
   }
 
