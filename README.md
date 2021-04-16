@@ -4,11 +4,24 @@
 
 ### AWS Accounts
 
-668123239304 - herodot-root                 - kiessling.manuel+aws-herodot-root@gmail.com
-507397081639 - herodot-org-iam              - kiessling.manuel+aws-herodot-org-iam@gmail.com
-829748688443 - herodot-infra-company-prod   - kiessling.manuel+aws-herodot-infra-company-prod@gmail.com
-619527075300 - herodot-infra-webapp-preprod - kiessling.manuel+aws-herodot-infra-webapp-preprod@gmail.com
-230024871185 - herodot-infra-webapp-prod    - kiessling.manuel+aws-herodot-infra-webapp-prod@gmail.com
+668123239304 - herodot-root
+kiessling.manuel+aws-herodot-root@gmail.com
+
+507397081639 - herodot-org-iam
+kiessling.manuel+aws-herodot-org-iam@gmail.com
+
+829748688443 - herodot-infra-company-prod
+kiessling.manuel+aws-herodot-infra-company-prod@gmail.com
+https://signin.aws.amazon.com/switchrole?roleName=AccountManager&account=829748688443
+
+619527075300 - herodot-infra-webapp-preprod
+kiessling.manuel+aws-herodot-infra-webapp-preprod@gmail.com
+https://signin.aws.amazon.com/switchrole?roleName=AccountManager&account=619527075300
+
+230024871185 - herodot-infra-webapp-prod
+kiessling.manuel+aws-herodot-infra-webapp-prod@gmail.com
+https://signin.aws.amazon.com/switchrole?roleName=AccountManager&account=230024871185
+
 
 071157021432 - Personal main account of Manuel Kießling
 878092365830 - Proof-of-concept account, part of Org owned by 071157021432
